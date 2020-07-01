@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ns2:ExportManifest xmlns:ns2="http://www.pentaho.com/schema/">
+    <ExportManifestInformation exportDate="01-07-2020 02:28:21 CEST" exportBy="admin" rootFolder="/home/admin/" manifestVersion="2"/>
+    <ExportManifestEntity path="Productos.wcdf">
+        <ExportManifestProperty>
+            <EntityMetaData name="Productos.wcdf" createdDate="2020-06-28T16:51:14.123+02:00" isFolder="false" path="Productos.wcdf" isHidden="false" isSchedulable="true" locale="es_ES" description="Dashboard para visualizar los productos del campo" title="Productos del campo"/>
+        </ExportManifestProperty>
+        <ExportManifestProperty>
+            <EntityAcl>
+                <entriesInheriting>true</entriesInheriting>
+                <owner>admin</owner>
+                <ownerType>USER</ownerType>
+            </EntityAcl>
+        </ExportManifestProperty>
+    </ExportManifestEntity>
+</ns2:ExportManifest>

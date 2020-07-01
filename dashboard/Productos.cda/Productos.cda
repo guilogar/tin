@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CDADescriptor>
+   <DataSources>
+      <Connection id="ProductMdx4" type="mondrian.jdbc">
+         <Catalog>mondrian:/olap</Catalog>
+         <Driver>com.mysql.jdbc.Driver</Driver>
+         <Pass>guillermo</Pass>
+         <Url>jdbc:mysql://localhost:3306/tin</Url>
+         <User>guillermo</User>
+      </Connection>
+      <Connection id="ProductMdx3" type="mondrian.jdbc">
+         <Catalog>mondrian:/olap</Catalog>
+         <Driver>com.mysql.jdbc.Driver</Driver>
+         <Pass>guillermo</Pass>
+         <Url>jdbc:mysql://localhost:3306/tin</Url>
+         <User>guillermo</User>
+      </Connection>
+      <Connection id="ProductMdx2" type="mondrian.jdbc">
+         <Catalog>mondrian:/olap</Catalog>
+         <Driver>com.mysql.jdbc.Driver</Driver>
+         <Pass>guillermo</Pass>
+         <Url>jdbc:mysql://localhost:3306/tin</Url>
+         <User>guillermo</User>
+      </Connection>
+      <Connection id="ProductMdx1" type="mondrian.jdbc">
+         <Catalog>mondrian:/olap</Catalog>
+         <Driver>com.mysql.jdbc.Driver</Driver>
+         <Pass>guillermo</Pass>
+         <Url>jdbc:mysql://localhost:3306/tin</Url>
+         <User>guillermo</User>
+      </Connection>
+      <Connection id="ProductSql3" type="sql.jdbc">
+         <Driver>com.mysql.jdbc.Driver</Driver>
+         <Pass>guillermo</Pass>
+         <Url>jdbc:mysql://localhost:3306/tin</Url>
+         <User>guillermo</User>
+      </Connection>
+      <Connection id="coordenadasAutonomicas" type="scripting.scripting">
+         <Initscript/>
+         <Language>beanshell</Language>
+      </Connection>
+   </DataSources>
+   <DataAccess access="public" connection="ProductMdx4" id="ProductMdx4"
+               type="denormalizedMdx">
+      <Name>ProductMdx4</Name>
+      <Cache duration="3600" enabled="true"/>
+      <Columns/>
+      <Parameters>
+         <Parameter default="pRegion" name="pRegion" type="String"/>
+         <Parameter default="pType" name="pType" type="String"/>
+      </Parameters>
+      <Query><![CDATA[SELECT {[Measures].[Quantity]} ON COLUMNS, CrossJoin({[Types.Name].[${pType}]}, CrossJoin({[Regions.Name].[${pRegion}]}, {[Products.Name].[All Products.Names], [Products.Name].[ACEITUNA DE ALMAZARA], [Products.Name].[ACEITUNA DE DOBLE APTITUD], [Products.Name].[ACEITUNA DE MESA], [Products.Name].[ACELGA], [Products.Name].[AGUACATE], [Products.Name].[AGUAS INTERIORES], [Products.Name].[AJO], [Products.Name].[ALBARICOQUERO], [Products.Name].[ALCACHOFA], [Products.Name].[ALFALFA], [Products.Name].[ALGARROBAS], [Products.Name].[ALGARROBO], [Products.Name].[ALGODON], [Products.Name].[ALMENDRO], [Products.Name].[ALMENDRO ABANDONADO], [Products.Name].[ALMENDRO NO COMERCIAL], [Products.Name].[ALTRAMUZ], [Products.Name].[APIO], [Products.Name].[AROMATICAS (LAVANDA,LAVANDIN,ETC)], [Products.Name].[ARROZ], [Products.Name].[AVELLANO], [Products.Name].[AVENA], [Products.Name].[BALDIO], [Products.Name].[BARBECHO], [Products.Name].[BARBECHO REGADIO], [Products.Name].[BARBECHOS ], [Products.Name].[BATATA], [Products.Name].[BERENJENA], [Products.Name].[CACAHUETE], [Products.Name].[CALABACIN], [Products.Name].[CALABAZA], [Products.Name].[CAMELINA], [Products.Name].[CAQUI], [Products.Name].[CARTAMO], [Products.Name].[CASTAÑO FRUTO], [Products.Name].[CAÑA DE AZUCAR], [Products.Name].[CEBADA DE 2 CARRERAS], [Products.Name].[CEBADA DE 6 CARRERAS], [Products.Name].[CEBOLLA], [Products.Name].[CENTENO], [Products.Name].[CEREALES GRANO (CE)], [Products.Name].[CEREZO Y GUINDO], [Products.Name].[CHAMPIÑON], [Products.Name].[CHIRIMOYO], [Products.Name].[CHOPO], [Products.Name].[CHUFA], [Products.Name].[CHUMBERA], [Products.Name].[CIRUELO], [Products.Name].[COL BROCOLI], [Products.Name].[COL REPOLLO], [Products.Name].[COLES Y BERZAS FORRAJERAS], [Products.Name].[COLIFLOR], [Products.Name].[COLZA], [Products.Name].[CONDIMENTOS (PIMENTON,ANIS,AZAFRAN,ETC)], [Products.Name].[CONIFERAS], [Products.Name].[CONIFERAS Y FRONDOSAS], [Products.Name].[ENCINA TRUFERA], [Products.Name].[ERIAL], [Products.Name].[ESCAROLA], [Products.Name].[ESPARRAGO], [Products.Name].[ESPARTIZAL], [Products.Name].[ESPINACA], [Products.Name].[FLORES Y ORNAMENTALES], [Products.Name].[FORRAJERAS (FO)], [Products.Name].[FRAMBUESO], [Products.Name].[FRESA-FRESON], [Products.Name].[FRONDOSAS CRECIMIENTO LENTO], [Products.Name].[FRONDOSAS CRECIMIENTO RAPIDO], [Products.Name].[FRUTALES CITRICOS (CI)], [Products.Name].[FRUTALES NO CITRICOS (FR)], [Products.Name].[GARBANZOS], [Products.Name].[GIRASOL], [Products.Name].[GRANADO], [Products.Name].[GRELO], [Products.Name].[GUISANTE VERDE], [Products.Name].[GUISANTES SECOS], [Products.Name].[HABAS SECAS], [Products.Name].[HABAS VERDES], [Products.Name].[HIGUERA], [Products.Name].[HORTALIZAS Y FLORES (HO)], [Products.Name].[HUERTO VACIO], [Products.Name].[HUERTOS FAMILIARES], [Products.Name].[IMPRODUCTIVO], [Products.Name].[INDUSTRIALES (IN)], [Products.Name].[INVERNADEROS VACIOS], [Products.Name].[JUDIAS SECAS], [Products.Name].[JUDIAS VERDES], [Products.Name].[KIWI], [Products.Name].[LECHUGA], [Products.Name].[LEGUMINOSAS GRANO (LE)], [Products.Name].[LENTEJAS], [Products.Name].[LIMONERO], [Products.Name].[LINO], [Products.Name].[LOMBARDA], [Products.Name].[LUPULO], [Products.Name].[MAIZ], [Products.Name].[MAIZ DULCE], [Products.Name].[MAIZ FORRAJERO], [Products.Name].[MANDARINO], [Products.Name].[MANGO], [Products.Name].[MANZANO], [Products.Name].[MATORRAL], [Products.Name].[MELOCOTONERO Y NECTARINAS], [Products.Name].[MELON], [Products.Name].[MEMBRILERO], [Products.Name].[MEZCLA DE CEREALES DE INVIERNO], [Products.Name].[NABO FORRAJERO], [Products.Name].[NARANJO], [Products.Name].[NARANJO AMARGO], [Products.Name].[NISPERO], [Products.Name].[NO AGRICOLA], [Products.Name].[NOGAL FRUTO], [Products.Name].[OLIVAR (OL)], [Products.Name].[OTRAS HORTALIZAS], [Products.Name].[OTRAS LEGUMINOSAS GRANO], [Products.Name].[OTRAS OLEAGINOSAS], [Products.Name].[OTRAS PLANTAS DE ESCARDA FORRAJERA], [Products.Name].[OTRAS SUPERFICIES], [Products.Name].[OTROS CEREALES GRANO], [Products.Name].[OTROS CITRICOS], [Products.Name].[OTROS CULTIVOS INDUSTRIALES], [Products.Name].[OTROS CULTIVOS LEÑOSOS], [Products.Name].[OTROS CULTIVOS LEÑOSOS (OC)], [Products.Name].[OTROS FORRAJES (CEREAL INV,SORGO,TREBOL)], [Products.Name].[OTROS FRUTALES], [Products.Name].[OTROS TUBERCULOS PARA CONSUMO], [Products.Name].[PAPAYA], [Products.Name].[PASTIZAL ALTA MONTAÑA], [Products.Name].[PASTIZAL MATORRAL], [Products.Name].[PASTIZALES], [Products.Name].[PATATA], [Products.Name].[PAWLONIA], [Products.Name].[PEPINO], [Products.Name].[PERAL], [Products.Name].[PIMIENTO], [Products.Name].[PIMIENTO PARA PIMENTON], [Products.Name].[PISTACHO], [Products.Name].[PIÑA], [Products.Name].[PLATANERA], [Products.Name].[POMELO], [Products.Name].[PRADERAS POLIFITAS], [Products.Name].[PRADOS NATURALES  (en secano)], [Products.Name].[PRADOS NATURALES (en regadio)], [Products.Name].[PRADOS Y PASTIZALES], [Products.Name].[PUERRO], [Products.Name].[QUINOA], [Products.Name].[REMOLACHA AZUCARERA], [Products.Name].[REMOLACHA FORRAJERA], [Products.Name].[REMOLACHA MESA], [Products.Name].[SANDIA], [Products.Name].[SOJA], [Products.Name].[SORGO], [Products.Name].[SUPERFICIE FORESTAL], [Products.Name].[SUPERFICIE GEOGRAFICA], [Products.Name].[SUPERFICIE VACIA INVERNADERO], [Products.Name].[TABACO], [Products.Name].[TOMATE], [Products.Name].[TOMATE INDUSTRIA], [Products.Name].[TRIGO BLANDO Y SEMIDURO], [Products.Name].[TRITICALE], [Products.Name].[TUBERCULOS C. H. (TU)], [Products.Name].[UVA DE MESA BLANCA CON SEMILLA], [Products.Name].[UVA DE MESA BLANCA SIN SEMILLA], [Products.Name].[UVA DE MESA ROJA CON SEMILLA], [Products.Name].[UVA DE MESA ROJA SIN SEMILLA], [Products.Name].[UVA DE TRANSFORMACION], [Products.Name].[VEZA], [Products.Name].[VEZA (veza+avena) PARA FORRAJE], [Products.Name].[VIVEROS], [Products.Name].[VIVEROS (VV)], [Products.Name].[VIÑEDO (VI)], [Products.Name].[YEROS], [Products.Name].[ZANAHORIA]})) ON ROWS FROM [olap]]]></Query>
+   </DataAccess>
+   <DataAccess access="public" connection="ProductMdx3" id="ProductMdx3"
+               type="denormalizedMdx">
+      <Name>ProductMdx3</Name>
+      <Cache duration="3600" enabled="true"/>
+      <Columns/>
+      <Parameters>
+         <Parameter default="pRegion" name="pRegion" type="String"/>
+         <Parameter default="pType" name="pType" type="String"/>
+      </Parameters>
+      <Query><![CDATA[SELECT {[Measures].[Quantity]} ON COLUMNS, CrossJoin({[Products.Category].[BARBECHOS ], [Products.Category].[CEREALES GRANO (CE)], [Products.Category].[FORRAJERAS (FO)], [Products.Category].[FRUTALES CITRICOS (CI)], [Products.Category].[FRUTALES NO CITRICOS (FR)], [Products.Category].[HORTALIZAS Y FLORES (HO)], [Products.Category].[HUERTOS FAMILIARES], [Products.Category].[INDUSTRIALES (IN)], [Products.Category].[INVERNADEROS VACIOS], [Products.Category].[LEGUMINOSAS GRANO (LE)], [Products.Category].[OLIVAR (OL)], [Products.Category].[OTRAS SUPERFICIES], [Products.Category].[OTROS CULTIVOS LEÑOSOS (OC)], [Products.Category].[SUPERFICIE FORESTAL], [Products.Category].[SUPERFICIE GEOGRAFICA], [Products.Category].[TUBERCULOS C. H. (TU)], [Products.Category].[PRADOS Y PASTIZALES], [Products.Category].[VIÑEDO (VI)], [Products.Category].[VIVEROS (VV)]}, {([Types.Name].[${pType}], [Regions.Name].[${pRegion}])}) ON ROWS FROM [olap]]]></Query>
+   </DataAccess>
+   <DataAccess access="public" connection="ProductMdx2" id="ProductMdx2"
+               type="denormalizedMdx">
+      <Name>ProductMdx2</Name>
+      <Cache duration="3600" enabled="true"/>
+      <Columns/>
+      <Parameters>
+         <Parameter default="pType" name="pType" type="String"/>
+      </Parameters>
+      <Query><![CDATA[SELECT {[Measures].[Quantity]} ON COLUMNS, CrossJoin({[Types.Name].[${pType}]}, {[Regions.Name].[Andalucia], [Regions.Name].[Aragon], [Regions.Name].[Canarias], [Regions.Name].[Cantabria], [Regions.Name].[Castilla y León], [Regions.Name].[Castilla-La Mancha], [Regions.Name].[Catalunia], [Regions.Name].[Comunidad Foral de Navarra], [Regions.Name].[Comunidad Valenciana], [Regions.Name].[Comunidad de Madrid], [Regions.Name].[Extremadura], [Regions.Name].[Galicia], [Regions.Name].[Islas Baleares], [Regions.Name].[La Rioja], [Regions.Name].[Pais Vasco], [Regions.Name].[Principado de Asturias], [Regions.Name].[Region de Murcia]}) ON ROWS FROM [olap]]]></Query>
+   </DataAccess>
+   <DataAccess access="public" connection="ProductMdx1" id="ProductMdx1"
+               type="denormalizedMdx">
+      <Name>ProductMdx1</Name>
+      <Cache duration="3600" enabled="true"/>
+      <Columns/>
+      <Parameters/>
+      <Query><![CDATA[SELECT {[Measures].[Quantity]} ON COLUMNS, {[Types.Name].[invernadero], [Types.Name].[regadio], [Types.Name].[secano]} ON ROWS FROM [olap]]]></Query>
+   </DataAccess>
+   <DataAccess access="public" connection="ProductSql3" id="ProductSql3" type="sql">
+      <Name>ProductSql3</Name>
+      <Cache duration="3600" enabled="true"/>
+      <Columns/>
+      <Parameters/>
+      <Query><![CDATA[select p.name as producto, p.category as categoria, sum(m.quantity) as cantidad
+from products p join measures m
+on p.id = m.product_id
+where p.name != p.category
+group by p.category, p.name;]]></Query>
+   </DataAccess>
+   <DataAccess access="public" connection="coordenadasAutonomicas" id="coordenadasAutonomicas"
+               type="scriptable">
+      <Name>coordenadasAutonomicas</Name>
+      <Cache duration="3600" enabled="true"/>
+      <Columns/>
+      <Parameters/>
+      <Query><![CDATA[import org.pentaho.reporting.engine.classic.core.util.TypedTableModel;
+
+String[] columnNames = new String[]{
+    "Longitude",
+    "Latitude",
+    "Description"
+};
+
+
+Class[] columnTypes = new Class[]{
+    Float.class,
+    Float.class,
+    String.class
+};
+
+TypedTableModel model = new TypedTableModel(columnNames, columnTypes);
+
+model.addRow(new Object[]{ new Float(-4.5000000), new Float(37.6000000), new String("Andalucia") });
+model.addRow(new Object[]{ new Float(-15.5000000), new Float(28.0000000), new String("Canarias") });
+model.addRow(new Object[]{ new Float(-4.0333300), new Float(43.2000000), new String("Cantabria") });
+
+return model;]]></Query>
+   </DataAccess>
+</CDADescriptor>
