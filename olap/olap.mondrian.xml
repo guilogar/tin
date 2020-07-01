@@ -1,0 +1,63 @@
+<Schema name="olap">
+  <Dimension name="Products">
+    <Hierarchy name="Category" hasAll="true" primaryKey="id">
+      <Table name="products" schema="tin"/>
+      <Level name="Category" uniqueMembers="false" column="category" type="String">
+      </Level>
+    </Hierarchy>
+    <Hierarchy name="Id" hasAll="true" primaryKey="id">
+      <Table name="products" schema="tin"/>
+      <Level name="Id" uniqueMembers="false" column="id" type="Numeric">
+      </Level>
+    </Hierarchy>
+    <Hierarchy name="Name" hasAll="true" primaryKey="id">
+      <Table name="products" schema="tin"/>
+      <Level name="Name" uniqueMembers="false" column="name" type="String">
+      </Level>
+    </Hierarchy>
+  </Dimension>
+  <Dimension name="Regions">
+    <Hierarchy name="Id" hasAll="true" primaryKey="id">
+      <Table name="regions" schema="tin"/>
+      <Level name="Id" uniqueMembers="false" column="id" type="Numeric">
+      </Level>
+    </Hierarchy>
+    <Hierarchy name="Name" hasAll="true" primaryKey="id">
+      <Table name="regions" schema="tin"/>
+      <Level name="Name" uniqueMembers="false" column="name" type="String">
+      </Level>
+    </Hierarchy>
+  </Dimension>
+  <Dimension name="Types">
+    <Hierarchy name="Id" hasAll="true" primaryKey="id">
+      <Table name="types" schema="tin"/>
+      <Level name="Id" uniqueMembers="false" column="id" type="Numeric">
+      </Level>
+    </Hierarchy>
+    <Hierarchy name="Name" hasAll="true" primaryKey="id">
+      <Table name="types" schema="tin"/>
+      <Level name="Name" uniqueMembers="false" column="name" type="String">
+      </Level>
+    </Hierarchy>
+  </Dimension>
+  <Dimension name="Years">
+    <Hierarchy name="Id" hasAll="true" primaryKey="id">
+      <Table name="years" schema="tin"/>
+      <Level name="Id" uniqueMembers="false" column="id" type="Numeric">
+      </Level>
+    </Hierarchy>
+    <Hierarchy name="Val" hasAll="true" primaryKey="id">
+      <Table name="years" schema="tin"/>
+      <Level name="Val" uniqueMembers="false" column="val" type="Numeric">
+      </Level>
+    </Hierarchy>
+  </Dimension>
+  <Cube name="olap">
+    <Table name="measures" schema="tin"/>
+    <DimensionUsage name="Products" source="Products" foreignKey="product_id"/>
+    <DimensionUsage name="Regions" source="Regions" foreignKey="product_region"/>
+    <DimensionUsage name="Types" source="Types" foreignKey="product_type"/>
+    <DimensionUsage name="Years" source="Years" foreignKey="product_year"/>
+    <Measure name="Quantity" column="quantity" aggregator="sum"/>
+  </Cube>
+</Schema>
