@@ -89,3 +89,19 @@ create table measures(
     foreign key (product_type)   references types(id) on delete cascade,
     foreign key (product_year)   references years(id) on delete cascade
 );
+
+select p.name as producto, t.name as tipo, m.quantity as cantidad
+from
+measures m join types t
+on m.product_type = t.id
+join products p
+on m.product_id = p.id
+where p.name != p.category and lower(p.name) like '%';
+
+select r.name as "Comunidad Autonoma", ye.val as "Año", round(sum(m.quantity), 2) as "Cantidad"
+from
+measures m join regions r
+on m.product_region = r.id
+join years ye
+on m.product_year = ye.id
+group by ye.val, r.name;
